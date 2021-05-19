@@ -2,9 +2,9 @@
 
 
 
-Model::Model(QObject *parent)
+Model::Model(Controller& controller,QObject *parent)
 {
-    populateModel();
+    populateModel(controller);
 }
 
 int Model::rowCount(const QModelIndex &parent) const
@@ -14,25 +14,23 @@ int Model::rowCount(const QModelIndex &parent) const
 
 int Model::columnCount(const QModelIndex &parent) const
 {
- return 2;
+ return 1;
 }
 
 QVariant Model::data(const QModelIndex &index, int role) const
 {
     if (role == Qt::DisplayRole){
         QVariant variant;
-        if(index.column() == 0)
-            variant.setValue(modelData[index.row()].first);
-        else
-            variant.setValue(modelData[index.row()]);
+        variant.setValue(modelData[index.row()]);
         return variant;
     }
     return QString{};
 }
 
-void Model::populateModel()
+void Model::populateModel(Controller& controller)
 {
-    for(auto i = 0;i<10;i++){
-        modelData.push_back(TrenchCoat{i});
+    auto val = controller.getList();
+    for(auto i : val){
+        modelData.push_back(i);
     }
 }

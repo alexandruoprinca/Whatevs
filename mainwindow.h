@@ -23,12 +23,17 @@ public:
 
 private:
     Ui::MainWindow *ui;
+public slots:
+    void connected_client();
+    void connected_admin();
+
+private:
     QHBoxLayout* layout;
     QGroupBox* group;
-    QPushButton *train_button;
-    QLabel* label;
-    QTableView* listView;
-    Model* model;
+    QPushButton *client_button;
+    QPushButton *admin_button;
+    QWidget* window = nullptr;
+
 
 
 };

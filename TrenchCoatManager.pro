@@ -9,13 +9,30 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    AdminWindow.cpp \
+    CSVFileManager.cpp \
+    ClientController.cpp \
+    ClientWindow.cpp \
+    Controller.cpp \
+    HTMLFileManager.cpp \
     Model.cpp \
+    Repository.cpp \
     TrenchCoat.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    AdminWindow.h \
+    CSVFileManager.h \
+    ClientController.h \
+    ClientWindow.h \
+    Controller.h \
+    DynamicVector.h \
+    FileManager.h \
+    HTMLFileManager.h \
     Model.h \
+    Reader.h \
+    Repository.h \
     TrenchCoat.h \
     mainwindow.h
 

@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-
+//#include "LoginTypeWindow.h"
 #include <QApplication>
 #include "TrenchCoat.h"
 
